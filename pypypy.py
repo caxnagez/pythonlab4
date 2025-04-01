@@ -78,8 +78,33 @@ list2 = [3, 6, -8, 2, -78, 1, 23, -45, 9]
 list2.sort()
 print(list2)
 #Задание 12
+my_list = [[4, 5], [0, 2], [1, 2], [1, 1], [5, 5], [7, 0], [0, 2], [1, 5], [0, 0]]
+print(sorted(my_list, key=lambda x: (x[1] ** 2 + x[0] ** 2) ** 1 / 2))
 #Задание 13
+import sys
+t = '''\
+    64 33 79 56 78 70 45 71 82 3
+    96 27 8 36 72 14 91 10 21 65
+    95 28 91 23 78 38 21 50 64 37
+    97 54 94 6 48 17 37 19 78 58
+    69 58 35 1 70 24 60 17 3 11
+    48 9 13 23 82 49 79 55 29 53
+    9 2 67 90 0 17 34 55 49 63
+    98 98 23 71 66 57 15 94 34 81
+    58 37 32 29 10 19 53 46 95 19
+    41 24 95 47 58 17 74 69 62 4 '''
+print("0" in sys.stdin.read().split())
 #Задание 14
+with open('text.txt', 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+lines = list(map(str.strip, lines))
+for i, line in enumerate(lines):
+    if line[-1] == ":":
+        start = i
+    elif line[-1] == '.':
+        end = i
+        break
+print(lines[start+1: end+1])
 #Задание 15
 #Задание 16
 #Задание 17
